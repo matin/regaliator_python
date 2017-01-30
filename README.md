@@ -79,7 +79,7 @@ The available versions are: `1.5`, `3.0` and `3.1` (recommended).
 
 ## Examples
 
-The following examples will show how to use the Regaliator gem to connect to the different Regalii API endpoints.
+The following examples will show how to use the Regaliator to connect to the different Regalii API endpoints.
 
 ### Billers List
 https://www.regalii.com/billers/utilities

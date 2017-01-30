@@ -7,7 +7,7 @@ setup(name='reagliator_python',
       author='Regalii',
       author_email='support@regalii.com',
       license='MIT',
-      packages=['regalii'],
+      packages=['regalii', 'regalii.clients', 'regalii.tests'],
       install_requires=[
           'pytz',
           'requests',

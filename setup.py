@@ -1,6 +1,6 @@
 from setuptools import setup
 
-setup(name='reagliator_python',
+setup(name='regalii',
       version='1.0.0',
       description="A Python HTTP client for consuming Regalii's API",
       url='https://github.com/regalii/regaliator_python',

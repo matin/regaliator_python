@@ -22,7 +22,7 @@ class Client(object):
             return self.request('/bills/{id}/refresh'.format(id=id)).post()
 
         def delete(self, id):
-            return self.request('/bills/{id}/delete'.format(id=id)).delete()
+            return self.request('/bills/{id}'.format(id=id)).delete()
 
         def bulk_refresh(self, params=None):
             return self.request('/bills/bulk_refresh', params).post()

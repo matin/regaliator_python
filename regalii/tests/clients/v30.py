@@ -147,7 +147,7 @@ class TestAccount(TestCase):
         fake_response = {
             "message": "Success",
         }
-        m.delete('https://api.casiregalii.com/bills/1/delete',
+        m.delete('https://api.casiregalii.com/bills/1',
                text=json.dumps(fake_response))
         client = v30.Client(config)
         client.bill.delete(1)

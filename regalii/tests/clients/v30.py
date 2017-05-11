@@ -143,6 +143,24 @@ class TestAccount(TestCase):
         client = v30.Client(config)
         client.bill.refresh(1)
 
+    def test_bill_delete(self, m):
+        fake_response = {
+            "message": "Success",
+        }
+        m.delete('https://api.casiregalii.com/bills/1/delete',
+               text=json.dumps(fake_response))
+        client = v30.Client(config)
+        client.bill.delete(1)
+
+    def test_bill_bulk_refresh(self, m):
+        fake_response = {
+          "message": "Success"
+        }
+        m.post('https://api.casiregalii.com/bills/bulk_refresh',
+               text=json.dumps(fake_response))
+        client = v30.Client(config)
+        client.bill.bulk_refresh({'bill_ids': [1, 2, 3]})
+
     def test_bill_pay(self, m):
         fake_response = {
             "message": "Success",

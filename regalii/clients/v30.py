@@ -21,6 +21,12 @@ class Client(object):
         def refresh(self, id):
             return self.request('/bills/{id}/refresh'.format(id=id)).post()
 
+        def delete(self, id):
+            return self.request('/bills/{id}'.format(id=id)).delete()
+
+        def bulk_refresh(self, params=None):
+            return self.request('/bills/bulk_refresh', params).post()
+
         def pay(self, id, params=None):
             return self.request('/bills/{id}/pay'.format(id=id), params).post()
 

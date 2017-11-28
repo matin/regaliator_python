@@ -40,7 +40,7 @@ config = Configuration(
     proxy_pass=None,
 
     # Version target
-    version='3.1')
+    version='3.2')
 ```
 
 ## Versions

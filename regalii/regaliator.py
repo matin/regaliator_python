@@ -1,6 +1,7 @@
 from regalii.clients import v15
 from regalii.clients import v30
 from regalii.clients import v31
+from regalii.clients import v32
 from regalii.exceptions import APIVersionError
 
 
@@ -9,6 +10,7 @@ class Regaliator(object):
         v15.API_VERSION: v15.Client,
         v30.API_VERSION: v30.Client,
         v31.API_VERSION: v31.Client,
+        v32.API_VERSION: v32.Client,
     }
 
     def __init__(self, configuration):

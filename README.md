@@ -2,9 +2,10 @@
 
 A Python HTTP client for consuming Regalii's API. The full API docs:
 
-  * Version 3.1 (recommended): https://www.regalii.com/api/v3/overview ;
-  * Version 3.0 : https://www.regalii.com/api/v3/overview ;
-  * Version 1.5 : https://www.regalii.com/api/v1/overview
+  * Version 3.2 (recommended): https://www.regalii.com/apix/v3/ ;
+  * Version 3.1: https://www.regalii.com/api/v3/overview ;
+  * Version 3.0: https://www.regalii.com/api/v3/overview ;
+  * Version 1.5: https://www.regalii.com/api/v1/overview
 
 ## Installation
 
@@ -24,27 +25,27 @@ from regalii.configuration import Configuration
 
 config = Configuration(
     # Authentication settings
-    'your-api-key', 
-    'your-secret-key'', 
-    
+    'your-api-key',
+    'your-secret-key'',
+
     # API host settings
     'api.casiregalii.com',
-    timeout=30, 
+    timeout=30,
     use_ssl=True,
-    
+
     # Proxy settings
-    proxy_host=None, 
+    proxy_host=None,
     proxy_port=None,
-    proxy_user=None, 
+    proxy_user=None,
     proxy_pass=None,
-    
+
     # Version target
-    version='3.1')
+    version='3.2')
 ```
 
 ## Versions
 
-The available versions are: `1.5`, `3.0` and `3.1` (recommended).
+The available versions are: `1.5`, `3.0`, `3.1` and `3.2` (recommended).
 
 ## Requests
 

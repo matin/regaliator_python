@@ -3,6 +3,7 @@ import json
 import logging
 import urllib
 
+from base64 import b64encode
 from datetime import datetime
 from hashlib import sha1, md5
 
@@ -166,9 +167,10 @@ class Request(object):
         return proxy if self.config.proxy_host else None
 
     def authorization(self, uri, body):
-        hashed = hmac.new(self.config.secret_key, self.canonical_string(uri, body), sha1)
-        auth = hashed.digest().encode("base64").rstrip('\n')
-
+        secret_key = bytes(self.config.secret_key.encode('utf-8'))
+        canonical_string = bytes(self.canonical_string(uri, body).encode('utf-8'))
+        hashed = hmac.new(secret_key, canonical_string, sha1)
+        auth = b64encode(hashed.digest())
         return 'APIAuth {api_key}:{auth}'.format(api_key=self.config.api_key, auth=auth)
 
     def canonical_string(self, uri, body):

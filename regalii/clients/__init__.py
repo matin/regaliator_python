@@ -170,7 +170,7 @@ class Request(object):
         secret_key = bytes(self.config.secret_key.encode('utf-8'))
         canonical_string = bytes(self.canonical_string(uri, body).encode('utf-8'))
         hashed = hmac.new(secret_key, canonical_string, sha1)
-        auth = b64encode(hashed.digest())
+        auth = b64encode(hashed.digest()).decode('ascii')
         return 'APIAuth {api_key}:{auth}'.format(api_key=self.config.api_key, auth=auth)
 
     def canonical_string(self, uri, body):
